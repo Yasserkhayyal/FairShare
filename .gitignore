@@ -1,0 +1,36 @@
+# Gradle
+.gradle/
+build/
+
+# Local configuration
+local.properties
+
+# IDE files
+.idea/
+*.iml
+
+# Keystore files
+*.jks
+*.keystore
+
+# Application files
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# C/C++
+.cxx/
+
+# Profiler files
+*.hprof
+captures/
+
+# Misc
+.DS_Store
+
+# Kotlin
+.kotlin/
+
+# Generated XML files
+data_extraction_rules.xml
