@@ -39,5 +39,7 @@ dependencies {
     api(libs.androidx.compose.ui.graphics)
     api(libs.androidx.compose.material3)
     api(libs.androidx.compose.googlefonts)
+    testImplementation(project(":core:test"))
+    androidTestImplementation(project(":core:test"))
     debugImplementation(project(":core:ui-tooling"))
 }

@@ -33,9 +33,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:base"))
+    api(project(":core:base"))
     api(libs.junit)
-    api(libs.androidx.junit)
-    api(libs.androidx.espresso.core)
     api(libs.androidx.compose.ui.test.junit4)
+    androidTestApi(libs.androidx.junit)
+    androidTestApi(libs.androidx.espresso.core)
 }
