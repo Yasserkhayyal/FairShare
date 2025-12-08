@@ -1,5 +1,3 @@
-import shadow.bundletool.com.android.tools.r8.internal.jv
-
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
@@ -28,7 +26,7 @@ android {
         }
     }
 
-    kotlin{
+    kotlin {
         jvmToolchain(17)
     }
 }

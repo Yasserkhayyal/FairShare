@@ -35,7 +35,6 @@ android {
 dependencies {
     implementation(project(":core:base"))
     api(libs.androidx.compose.ui.tooling)
-    api(libs.androidx.compose.ui.test.manifest)
     testImplementation(project(":core:test"))
     androidTestImplementation(project(":core:test"))
 }
