@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -26,6 +27,10 @@ android {
         }
     }
 
+    buildFeatures {
+        compose = true
+    }
+
     kotlin {
         jvmToolchain(17)
     }
@@ -34,6 +39,7 @@ android {
 dependencies {
     implementation(project(":core:base"))
     implementation(project(":core:design-system"))
+    implementation(project(":core:navigation"))
     testImplementation(project(":core:test"))
     androidTestImplementation(project(":core:test"))
     debugImplementation(project(":core:ui-tooling"))
