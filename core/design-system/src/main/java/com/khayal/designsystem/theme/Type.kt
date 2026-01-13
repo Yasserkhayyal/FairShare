@@ -1,11 +1,17 @@
 package com.khayal.designsystem.theme
 
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.googlefonts.Font
 import androidx.compose.ui.text.googlefonts.GoogleFont
+import androidx.compose.ui.unit.sp
 import com.khayal.designsystem.R
 
 val provider = GoogleFont.Provider(
@@ -37,23 +43,68 @@ val appFontFamily = FontFamily(
     }
 )
 
-// Default Material 3 typography values
-val baseline = Typography()
+val baseLine = Typography()
+@Immutable
+data class FairShareTypography(
+    val brandAppTitle: TextStyle = mBrandAppTitle,
+    val brandTagLine: TextStyle = mBrandTagLine,
+    val headingScreenTitle: TextStyle = mHeadingScreenTitle,
+    val bodyPrimary: TextStyle = mBodyPrimary,
+    val bodySecondary: TextStyle = mBodySecondary,
+    val bodyEmphasis: TextStyle = mBodyEmphasis,
+    val captionMeta: TextStyle = mCaptionMeta,
+    val buttonLabel: TextStyle = mButtonLabel,
+)
+val LocalFairShareTypography = staticCompositionLocalOf { FairShareTypography() }
 
-val AppTypography = Typography(
-    displayLarge = baseline.displayLarge.copy(fontFamily = appFontFamily),
-    displayMedium = baseline.displayMedium.copy(fontFamily = appFontFamily),
-    displaySmall = baseline.displaySmall.copy(fontFamily = appFontFamily),
-    headlineLarge = baseline.headlineLarge.copy(fontFamily = appFontFamily),
-    headlineMedium = baseline.headlineMedium.copy(fontFamily = appFontFamily),
-    headlineSmall = baseline.headlineSmall.copy(fontFamily = appFontFamily),
-    titleLarge = baseline.titleLarge.copy(fontFamily = appFontFamily),
-    titleMedium = baseline.titleMedium.copy(fontFamily = appFontFamily),
-    titleSmall = baseline.titleSmall.copy(fontFamily = appFontFamily),
-    bodyLarge = baseline.bodyLarge.copy(fontFamily = appFontFamily),
-    bodyMedium = baseline.bodyMedium.copy(fontFamily = appFontFamily),
-    bodySmall = baseline.bodySmall.copy(fontFamily = appFontFamily),
-    labelLarge = baseline.labelLarge.copy(fontFamily = appFontFamily),
-    labelMedium = baseline.labelMedium.copy(fontFamily = appFontFamily),
-    labelSmall = baseline.labelSmall.copy(fontFamily = appFontFamily)
+val MaterialTheme.fairShareTypography : FairShareTypography
+    @Composable
+    get() = LocalFairShareTypography.current
+
+private val mBrandAppTitle = TextStyle(
+    fontFamily = appFontFamily,
+    fontWeight = FontWeight.Bold,
+    fontSize = 28.sp
+)
+
+private val mBrandTagLine = TextStyle(
+    fontFamily = appFontFamily,
+    fontWeight = FontWeight.Normal,
+    fontSize = 16.sp
+)
+
+val mHeadingScreenTitle = TextStyle(
+    fontFamily = appFontFamily,
+    fontWeight = FontWeight.SemiBold,
+    fontSize = 20.sp
+)
+
+val mBodyPrimary = TextStyle(
+    fontFamily = appFontFamily,
+    fontWeight = FontWeight.Normal,
+    fontSize = 16.sp
+)
+
+val mBodySecondary = TextStyle(
+    fontFamily = appFontFamily,
+    fontWeight = FontWeight.Normal,
+    fontSize = 14.sp
+)
+
+val mBodyEmphasis = TextStyle(
+    fontFamily = appFontFamily,
+    fontWeight = FontWeight.SemiBold,
+    fontSize = 14.sp
+)
+
+val mCaptionMeta = TextStyle(
+    fontFamily = appFontFamily,
+    fontWeight = FontWeight.Normal,
+    fontSize = 12.sp
+)
+
+val mButtonLabel = TextStyle(
+    fontFamily = appFontFamily,
+    fontWeight = FontWeight.SemiBold,
+    fontSize = 16.sp
 )
