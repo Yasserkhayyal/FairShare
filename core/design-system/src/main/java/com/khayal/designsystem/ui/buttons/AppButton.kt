@@ -9,7 +9,10 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import com.khayal.designsystem.testing.ButtonRoleKey
+import com.khayal.designsystem.testing.ButtonVariantKey
 import com.khayal.designsystem.ui.buttons.ButtonTokens.border
 import com.khayal.designsystem.ui.buttons.ButtonTokens.containerColor
 import com.khayal.designsystem.ui.buttons.ButtonTokens.contentColor
@@ -22,44 +25,48 @@ fun AppButton(
     buttonRole: ButtonRole = ButtonRole.PRIMARY,
     buttonVariant: ButtonVariant = ButtonVariant.FILLED,
     enabled: Boolean = true
-){
+) {
     val containerColor = containerColor(buttonRole, buttonVariant)
     val contentColor = contentColor(buttonRole)
     val border = border(buttonRole, buttonVariant)
     val colors = buttonColors(containerColor, contentColor)
+    with(modifier.semantics {
+        this[ButtonRoleKey] = buttonRole
+        this[ButtonVariantKey] = buttonVariant
+    }) {
+        when (buttonVariant) {
+            ButtonVariant.FILLED ->
+                Button(
+                    onClick = onClick,
+                    modifier = height(56.dp),
+                    colors = colors,
+                    enabled = enabled,
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    buttonContent()
+                }
 
-    when (buttonVariant) {
-        ButtonVariant.FILLED ->
-            Button(
-                onClick = onClick,
-                modifier = modifier.height(56.dp),
-                colors = colors,
-                enabled = enabled,
-                shape = RoundedCornerShape(12.dp)
-            ){
-                buttonContent()
-            }
+            ButtonVariant.OUTLINED ->
+                OutlinedButton(
+                    onClick = onClick,
+                    modifier = height(56.dp),
+                    colors = colors,
+                    border = border,
+                    enabled = enabled,
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    buttonContent()
+                }
 
-        ButtonVariant.OUTLINED ->
-            OutlinedButton(
-                onClick = onClick,
-                modifier = modifier.height(56.dp),
-                colors = colors,
-                border = border,
-                enabled = enabled,
-                shape = RoundedCornerShape(12.dp)
-            ) {
-                buttonContent()
-            }
-
-        ButtonVariant.TEXT ->
-            TextButton(
-                onClick = onClick,
-                modifier = modifier.height(48.dp),
-                colors = colors,
-                enabled = enabled
-            ) {
-                buttonContent()
-            }
+            ButtonVariant.TEXT ->
+                TextButton(
+                    onClick = onClick,
+                    modifier = height(48.dp),
+                    colors = colors,
+                    enabled = enabled
+                ) {
+                    buttonContent()
+                }
+        }
     }
 }

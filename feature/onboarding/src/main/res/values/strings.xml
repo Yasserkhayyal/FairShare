@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cd_wallet">Wallet</string>
+    <string name="app_name">FairShare</string>
+    <string name="app_tagline">Effortless Expense Splitting</string>
+    <string name="get_started">Get Started</string>
+    <string name="learn_more">Learn More</string>
+</resources>
