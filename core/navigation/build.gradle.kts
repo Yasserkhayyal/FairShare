@@ -9,6 +9,6 @@ android {
 dependencies {
     implementation(project(":core:base"))
     api(libs.androidx.navigation.compose)
-    testImplementation(project(":core:test"))
-    androidTestImplementation(project(":core:test"))
+    testImplementation(project(":core:test:jvm"))
+    androidTestImplementation(project(":core:test:instrumentation"))
 }

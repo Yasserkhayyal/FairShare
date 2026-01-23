@@ -10,7 +10,7 @@ dependencies {
     implementation(project(":core:base"))
     implementation(project(":core:design-system"))
     implementation(project(":core:navigation"))
-    testImplementation(project(":core:test"))
-    androidTestImplementation(project(":core:test"))
+    testImplementation(project(":core:test:jvm"))
+    androidTestImplementation(project(":core:test:instrumentation"))
     debugImplementation(project(":core:ui-tooling"))
 }

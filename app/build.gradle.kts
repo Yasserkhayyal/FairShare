@@ -7,12 +7,13 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(project(":core:base"))
     implementation(project(":core:design-system"))
-    testImplementation(project(":core:test"))
-    androidTestImplementation(project(":core:test"))
+    implementation(project(":core:navigation"))
+    implementation(project(":feature:onboarding"))
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.compose)
+    testImplementation(project(":core:test:jvm"))
+    androidTestImplementation(project(":core:test:instrumentation"))
     debugImplementation(project(":core:ui-tooling"))
 }
