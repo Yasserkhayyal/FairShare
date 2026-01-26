@@ -21,7 +21,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.khayal.designsystem.theme.fairShareTypography
 import com.khayal.designsystem.ui.buttons.AppButton
@@ -136,13 +135,4 @@ fun Welcome(
                 .testTag(SPACER_32_TAG))
         }
     }
-}
-
-@Preview
-@Composable
-fun WelcomePreview() {
-    Welcome(
-        onGetStartedClick = {},
-        onLearnMoreClick = {}
-    )
 }

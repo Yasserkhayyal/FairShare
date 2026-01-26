@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.fairshare.android.library)
+    alias(libs.plugins.screenshot)
 }
 
 android {
@@ -13,4 +14,6 @@ dependencies {
     testImplementation(project(":core:test:jvm"))
     androidTestImplementation(project(":core:test:instrumentation"))
     debugImplementation(project(":core:ui-tooling"))
+    screenshotTestImplementation(project(":core:test:screenshot"))
+    screenshotTestImplementation(project(":core:design-system"))
 }

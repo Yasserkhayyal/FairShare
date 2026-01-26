@@ -1,7 +1,7 @@
 [versions]
 activityCompose = "1.12.2"
-androidJunit = "1.3.0"
 agp = "8.13.2"
+androidJunit = "1.3.0"
 appcompat = "1.7.1"
 composeBom = "2026.01.00"
 coreKtx = "1.17.0"
@@ -14,7 +14,8 @@ lifecycleRuntimeKtx = "2.10.0"
 mockkVersion = "1.14.7"
 material = "1.13.0"
 navigationCompose = "2.9.6"
-robolectric-core = "4.16"
+robolectric-core = "4.16.1"
+screenshot = "0.0.1-alpha13"
 
 [libraries]
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -31,6 +32,7 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 androidx-compose-googlefonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidJunit" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
@@ -39,23 +41,22 @@ io-mockk-agent = { group = "io.mockk", name = "mockk-agent", version.ref = "mock
 io-mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockkVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 junit-bom = { group = "org.junit", name = "junit-bom", version.ref = "junitBom" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-# The core Robolectric engine (Required)
-robolectric-core = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric-core" }
-# dependency for @ParameterizedTest
 junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api" }
 junit-jupiter-param = { group = "org.junit.jupiter", name = "junit-jupiter-params" }
 junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine" }
 junit-vintage-engine = { group = "org.junit.vintage", name = "junit-vintage-engine" }
-android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+robolectric-core = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric-core" }
+screenshot-validation-api = { group = "com.android.tools.screenshot", name = "screenshot-validation-api", version.ref = "screenshot" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
-android-library = { id = "com.android.library", version.ref = "agp" }
+screenshot = { id = "com.android.compose.screenshot", version.ref = "screenshot" }
 # custom plugins
 # Add your custom convention plugins here at the end
 fairshare-android-application = { id = "fairshare.android.application" }

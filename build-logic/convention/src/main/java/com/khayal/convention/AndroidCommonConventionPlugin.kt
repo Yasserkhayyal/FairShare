@@ -37,6 +37,7 @@ class AndroidCommonConventionPlugin : Plugin<Project> {
         commonExtension: CommonExtension<*, *, *, *, *, *>,
     ) {
         commonExtension.apply {
+            experimentalProperties["android.experimental.enableScreenshotTest"] = true
             compileSdk = 36
 
             defaultConfig {
