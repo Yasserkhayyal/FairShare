@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.khayal.designsystem.theme.fairShareTypography
 import com.khayal.designsystem.ui.buttons.AppButton
@@ -81,7 +82,8 @@ fun Welcome(
             Text(
                 text = appName,
                 style = MaterialTheme.fairShareTypography.brandAppTitle,
-                color = MaterialTheme.colorScheme.onBackground
+                color = MaterialTheme.colorScheme.onBackground,
+                textAlign = TextAlign.Center
             )
             Spacer(modifier = Modifier
                 .size(8.dp)
@@ -89,7 +91,8 @@ fun Welcome(
             Text(
                 text = appTagline,
                 style = MaterialTheme.fairShareTypography.brandTagLine,
-                color = MaterialTheme.colorScheme.onBackground
+                color = MaterialTheme.colorScheme.onBackground,
+                textAlign = TextAlign.Center
             )
         }
 

@@ -15,4 +15,5 @@ dependencies {
     api(libs.io.mockk)
     api(libs.io.mockk.agent)
     api(libs.io.mockk.android)
+    api(libs.google.test.paramter.injector)
 }

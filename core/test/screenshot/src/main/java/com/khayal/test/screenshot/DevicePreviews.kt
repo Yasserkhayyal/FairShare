@@ -13,5 +13,5 @@ import androidx.compose.ui.tooling.preview.Preview
  */
 @Preview(name = "Light theme")
 @Preview(name = "Dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Preview(name = "Large font", fontScale = 2f)
+@Preview(name = "Large font 2x", fontScale = 2f)
 annotation class DevicePreviews
