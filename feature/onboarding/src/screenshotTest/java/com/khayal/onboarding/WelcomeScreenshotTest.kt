@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.android.tools.screenshot.PreviewTest
 import com.khayal.designsystem.theme.FairShareTheme
+import com.khayal.onboarding.welcome.Welcome
 import com.khayal.test.screenshot.DevicePreviews
 
 private const val LONG_APP_NAME_LABEL = "This is a very long app name that should be wrapped"

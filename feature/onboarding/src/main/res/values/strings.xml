@@ -5,4 +5,9 @@
     <string name="app_tagline">Effortless Expense Splitting</string>
     <string name="get_started">Get Started</string>
     <string name="learn_more">Learn More</string>
+    <string name="cd_learn_more_illustration">learn more illustration</string>
+    <string name="learn_more_title">Create Groups for Any Occasion</string>
+    <string name="learn_more_description">Organize expenses for trips, households or any event with ease</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
 </resources>

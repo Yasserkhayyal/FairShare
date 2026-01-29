@@ -6,12 +6,10 @@ import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.assertContentDescriptionEquals
 import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.getBoundsInRoot
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import com.google.testing.junit.testparameterinjector.TestParameterInjector
 import com.google.testing.junit.testparameterinjector.TestParameters
@@ -20,9 +18,12 @@ import com.khayal.designsystem.testing.ButtonRoleKey
 import com.khayal.designsystem.testing.ButtonVariantKey
 import com.khayal.designsystem.ui.buttons.ButtonRole
 import com.khayal.designsystem.ui.buttons.ButtonVariant
+import com.khayal.onboarding.welcome.GET_STARTED_BUTTON_TAG
+import com.khayal.onboarding.welcome.LEARN_MORE_BUTTON_TAG
+import com.khayal.onboarding.welcome.WALLET_ICON_TAG
+import com.khayal.onboarding.welcome.Welcome
 import io.mockk.mockk
 import io.mockk.verify
-import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -131,35 +132,36 @@ class WelcomeKtTest {
 
     }
 
-class WelcomeButtonProvider : TestParametersValuesProvider() {
-    override fun provideValues(context: TestParametersValuesProvider.Context?): List<TestParameters.TestParametersValues?> {
-        return listOf(
-            TestParameters.TestParametersValues.Builder()
-                .name("GetStarted")
-                .addParameter("testTag", GET_STARTED_BUTTON_TAG)
-                .addParameter("buttonTextResId", R.string.get_started)
-                .addParameter(
-                    "buttonRole",
-                    ButtonRole.PRIMARY
-                )
-                .addParameter(
-                    "buttonVariant",
-                    ButtonVariant.FILLED
-                )
-                .build(),
-            TestParameters.TestParametersValues.Builder()
-                .name("LearnMore")
-                .addParameter("testTag", LEARN_MORE_BUTTON_TAG)
-                .addParameter("buttonTextResId", R.string.learn_more)
-                .addParameter(
-                    "buttonRole",
-                    ButtonRole.SECONDARY
-                )
-                .addParameter(
-                    "buttonVariant",
-                    ButtonVariant.FILLED
-                )
-                .build()
-        )
+    class WelcomeButtonProvider : TestParametersValuesProvider() {
+        override fun provideValues(context: TestParametersValuesProvider.Context?): List<TestParameters.TestParametersValues?> {
+            return listOf(
+                TestParameters.TestParametersValues.Builder()
+                    .name("GetStarted")
+                    .addParameter("testTag", GET_STARTED_BUTTON_TAG)
+                    .addParameter("buttonTextResId", R.string.get_started)
+                    .addParameter(
+                        "buttonRole",
+                        ButtonRole.PRIMARY
+                    )
+                    .addParameter(
+                        "buttonVariant",
+                        ButtonVariant.FILLED
+                    )
+                    .build(),
+                TestParameters.TestParametersValues.Builder()
+                    .name("LearnMore")
+                    .addParameter("testTag", LEARN_MORE_BUTTON_TAG)
+                    .addParameter("buttonTextResId", R.string.learn_more)
+                    .addParameter(
+                        "buttonRole",
+                        ButtonRole.SECONDARY
+                    )
+                    .addParameter(
+                        "buttonVariant",
+                        ButtonVariant.FILLED
+                    )
+                    .build()
+            )
+        }
     }
 }

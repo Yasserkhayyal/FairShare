@@ -1,4 +1,4 @@
-package com.khayal.onboarding
+package com.khayal.onboarding.welcome
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -27,6 +28,7 @@ import com.khayal.designsystem.theme.fairShareTypography
 import com.khayal.designsystem.ui.buttons.AppButton
 import com.khayal.designsystem.ui.buttons.ButtonRole
 import com.khayal.designsystem.ui.buttons.ButtonVariant
+import com.khayal.onboarding.R
 
 const val WALLET_ICON_TAG = "WalletIcon"
 const val GET_STARTED_BUTTON_TAG = "getStartedButton"
@@ -52,7 +54,7 @@ fun Welcome(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier
-            .size(96.dp)
+            .height(96.dp)
             .testTag(SPACER_96_TAG))
 
         Box(
@@ -77,7 +79,7 @@ fun Welcome(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Spacer(modifier = Modifier
-                .size(24.dp)
+                .height(24.dp)
                 .testTag(SPACER_24_TAG))
             Text(
                 text = appName,
@@ -86,12 +88,12 @@ fun Welcome(
                 textAlign = TextAlign.Center
             )
             Spacer(modifier = Modifier
-                .size(8.dp)
+                .height(8.dp)
                 .testTag(SPACER_8_TAG))
             Text(
                 text = appTagline,
                 style = MaterialTheme.fairShareTypography.brandTagLine,
-                color = MaterialTheme.colorScheme.onBackground,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center
             )
         }
@@ -116,7 +118,7 @@ fun Welcome(
                 enabled = true
             )
             Spacer(modifier = Modifier
-                .size(12.dp)
+                .height(12.dp)
                 .testTag(SPACER_12_TAG))
             AppButton(
                 modifier = Modifier
@@ -134,7 +136,7 @@ fun Welcome(
                 enabled = true
             )
             Spacer(modifier = Modifier
-                .size(32.dp)
+                .height(32.dp)
                 .testTag(SPACER_32_TAG))
         }
     }
