@@ -33,11 +33,10 @@ import com.khayal.onboarding.R
 const val WALLET_ICON_TAG = "WalletIcon"
 const val GET_STARTED_BUTTON_TAG = "getStartedButton"
 const val LEARN_MORE_BUTTON_TAG = "learnMoreButton"
-const val SPACER_96_TAG = "Spacer96"
-const val SPACER_24_TAG = "Spacer24"
-const val SPACER_8_TAG = "Spacer8"
-const val SPACER_12_TAG = "Spacer12"
-const val SPACER_32_TAG = "Spacer32"
+const val WALLET_ICON_CONTAINER = "walletIconContainer"
+const val WELCOME_SCREEN_OUTER_MOST_CONTAINER = "welcomeScreenTopContainer"
+const val WELCOME_TEXTS_CONTAINER = "welcomeTextsContainer"
+const val WELCOME_BUTTONS_CONTAINER = "welcomeButtonsContainer"
 
 @Composable
 fun Welcome(
@@ -50,18 +49,18 @@ fun Welcome(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
-            .padding(horizontal = 24.dp),
+            .padding(horizontal = 24.dp)
+            .testTag(WELCOME_SCREEN_OUTER_MOST_CONTAINER),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Spacer(modifier = Modifier
-            .height(96.dp)
-            .testTag(SPACER_96_TAG))
+        Spacer(modifier = Modifier.height(96.dp))
 
         Box(
             modifier = Modifier
                 .size(96.dp)
                 .clip(CircleShape)
                 .background(color = MaterialTheme.colorScheme.primary)
+                .testTag(WALLET_ICON_CONTAINER)
         ) {
             Icon(
                 modifier = Modifier
@@ -75,12 +74,12 @@ fun Welcome(
         }
 
         Column(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .testTag(WELCOME_TEXTS_CONTAINER),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(modifier = Modifier
-                .height(24.dp)
-                .testTag(SPACER_24_TAG))
+            Spacer(modifier = Modifier.height(24.dp))
             Text(
                 text = appName,
                 style = MaterialTheme.fairShareTypography.brandAppTitle,
@@ -89,7 +88,7 @@ fun Welcome(
             )
             Spacer(modifier = Modifier
                 .height(8.dp)
-                .testTag(SPACER_8_TAG))
+            )
             Text(
                 text = appTagline,
                 style = MaterialTheme.fairShareTypography.brandTagLine,
@@ -99,7 +98,9 @@ fun Welcome(
         }
 
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize()
+                .testTag(WELCOME_BUTTONS_CONTAINER),
             verticalArrangement = Arrangement.Bottom
         ) {
             AppButton(
@@ -117,9 +118,7 @@ fun Welcome(
                 buttonVariant = ButtonVariant.FILLED,
                 enabled = true
             )
-            Spacer(modifier = Modifier
-                .height(12.dp)
-                .testTag(SPACER_12_TAG))
+            Spacer(modifier = Modifier.height(12.dp))
             AppButton(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -135,9 +134,7 @@ fun Welcome(
                 buttonVariant = ButtonVariant.FILLED,
                 enabled = true
             )
-            Spacer(modifier = Modifier
-                .height(32.dp)
-                .testTag(SPACER_32_TAG))
+            Spacer(modifier = Modifier.height(32.dp))
         }
     }
 }

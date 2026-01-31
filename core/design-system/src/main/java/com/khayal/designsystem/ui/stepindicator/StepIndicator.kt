@@ -13,13 +13,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
+
+const val STEP_INDICATOR_TAG = "stepIndicator"
 
 @Composable
 fun StepIndicator(
     currentStep: Int, stepCount: Int, modifier: Modifier = Modifier
 ) {
-    Row(modifier = modifier, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+    Row(
+        modifier = modifier.testTag(STEP_INDICATOR_TAG),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
         repeat(stepCount) { index ->
             val isSelected = index == currentStep
             val width by animateDpAsState(targetValue = if (isSelected) 16.dp else 8.dp)

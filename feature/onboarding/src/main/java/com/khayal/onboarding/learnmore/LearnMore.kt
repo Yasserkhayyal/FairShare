@@ -35,14 +35,18 @@ import com.khayal.onboarding.R
 const val LEARN_MORE_ILLUSTRATION_ICON_TAG = "learnMoreIllustration"
 const val SKIP_BUTTON_TAG = "skipButton"
 const val NEXT_BUTTON_TAG = "nextButton"
+const val ILLUSTRATION_CONTAINER_TAG = "illustrationContainer"
 
 @Composable
 fun LearnMore(
-    onSkipButtonClicked: () -> Unit = {},
-    onNextButtonClicked: () -> Unit = {}
+    onSkipButtonClicked: () -> Unit,
+    onNextButtonClicked: () -> Unit,
+    modifier: Modifier = Modifier,
+    learnMoreTitle: String = stringResource(R.string.learn_more_title),
+    learnMoreDescription: String = stringResource(R.string.learn_more_description)
 ) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(
                 start = 24.dp, top = 32.dp, end = 24.dp, bottom = 24.dp
@@ -59,7 +63,8 @@ fun LearnMore(
                 modifier = Modifier
                     .clip(CircleShape)
                     .size(120.dp)
-                    .background(MaterialTheme.colorScheme.surfaceVariant),
+                    .background(MaterialTheme.colorScheme.surfaceVariant)
+                    .testTag(ILLUSTRATION_CONTAINER_TAG),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
@@ -73,14 +78,14 @@ fun LearnMore(
             }
             Spacer(modifier = Modifier.height(24.dp))
             Text(
-                text = stringResource(R.string.learn_more_title),
+                text = learnMoreTitle,
                 style = MaterialTheme.fairShareTypography.brandAppTitle,
                 color = MaterialTheme.colorScheme.onBackground,
                 textAlign = TextAlign.Center
             )
             Spacer(Modifier.height(12.dp))
             Text(
-                text = stringResource(R.string.learn_more_description),
+                text = learnMoreDescription,
                 style = MaterialTheme.fairShareTypography.bodySecondary,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center
@@ -102,7 +107,7 @@ fun LearnMore(
             ) {
                 AppButton(
                     modifier = Modifier.testTag(SKIP_BUTTON_TAG),
-                    buttonRole = ButtonRole.SECONDARY,
+                    buttonRole = ButtonRole.NEUTRAL,
                     buttonVariant = ButtonVariant.TEXT,
                     onClick = onSkipButtonClicked,
                     buttonContent = {
