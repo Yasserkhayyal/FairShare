@@ -9,7 +9,7 @@ import org.gradle.kotlin.dsl.configure
 class AndroidLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            pluginManager.apply(ANDROID_LIBRARY_PLUGIN)
+            pluginManager.apply("com.android.library")
             apply<AndroidCommonConventionPlugin>()
             extensions.configure<LibraryExtension> {
                 defaultConfig {
@@ -29,5 +29,4 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             }
         }
     }
-
 }

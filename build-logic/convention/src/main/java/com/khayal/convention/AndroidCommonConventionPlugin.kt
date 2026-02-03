@@ -9,8 +9,7 @@ class AndroidCommonConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             // Apply common plugins every module needs
-            pluginManager.apply(KOTLIN_COMPOSE_PLUGIN)
-
+            pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
             // Find the Android extension (app or library) and configure it.
             extensions.findByType(CommonExtension::class)?.run {
                 experimentalProperties["android.experimental.enableScreenshotTest"] = true
