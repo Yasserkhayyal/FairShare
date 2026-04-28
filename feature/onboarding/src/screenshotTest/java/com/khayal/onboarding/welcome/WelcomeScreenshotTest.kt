@@ -3,6 +3,7 @@ package com.khayal.onboarding.welcome
 import androidx.compose.runtime.Composable
 import com.android.tools.screenshot.PreviewTest
 import com.khayal.designsystem.theme.FairShareTheme
+import com.khayal.onboarding.presentation.welcome.Welcome
 import com.khayal.test.screenshot.DevicePreviews
 
 /**

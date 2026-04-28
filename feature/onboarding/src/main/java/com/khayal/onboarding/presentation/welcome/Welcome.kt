@@ -1,4 +1,4 @@
-package com.khayal.onboarding.welcome
+package com.khayal.onboarding.presentation.welcome
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

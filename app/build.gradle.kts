@@ -9,6 +9,7 @@ android {
 dependencies {
     implementation(project(":core:base"))
     implementation(project(":core:design-system"))
+    implementation(project(":core:mvi"))
     implementation(project(":core:navigation"))
     implementation(project(":feature:onboarding"))
     implementation(libs.androidx.lifecycle.runtime.ktx)

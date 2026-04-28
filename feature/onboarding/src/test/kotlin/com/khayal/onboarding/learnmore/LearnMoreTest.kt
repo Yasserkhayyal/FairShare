@@ -21,6 +21,11 @@ import com.khayal.designsystem.ui.buttons.ButtonRole
 import com.khayal.designsystem.ui.buttons.ButtonVariant
 import com.khayal.designsystem.ui.stepindicator.STEP_INDICATOR_TAG
 import com.khayal.onboarding.R
+import com.khayal.onboarding.presentation.learnmore.ILLUSTRATION_CONTAINER_TAG
+import com.khayal.onboarding.presentation.learnmore.LEARN_MORE_ILLUSTRATION_ICON_TAG
+import com.khayal.onboarding.presentation.learnmore.LearnMore
+import com.khayal.onboarding.presentation.learnmore.NEXT_BUTTON_TAG
+import com.khayal.onboarding.presentation.learnmore.SKIP_BUTTON_TAG
 import io.mockk.mockk
 import io.mockk.verify
 import junit.framework.TestCase.assertEquals

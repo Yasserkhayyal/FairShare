@@ -10,7 +10,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply("com.android.library")
-            apply<AndroidCommonConventionPlugin>()
+            apply<CommonConventionPlugin>()
             extensions.configure<LibraryExtension> {
                 defaultConfig {
                     // This is where consumerProguardFiles belongs

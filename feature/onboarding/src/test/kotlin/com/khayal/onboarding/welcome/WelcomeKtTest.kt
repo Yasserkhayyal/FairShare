@@ -20,6 +20,14 @@ import com.khayal.designsystem.testing.ButtonVariantKey
 import com.khayal.designsystem.ui.buttons.ButtonRole
 import com.khayal.designsystem.ui.buttons.ButtonVariant
 import com.khayal.onboarding.R
+import com.khayal.onboarding.presentation.welcome.GET_STARTED_BUTTON_TAG
+import com.khayal.onboarding.presentation.welcome.LEARN_MORE_BUTTON_TAG
+import com.khayal.onboarding.presentation.welcome.WALLET_ICON_CONTAINER
+import com.khayal.onboarding.presentation.welcome.WALLET_ICON_TAG
+import com.khayal.onboarding.presentation.welcome.WELCOME_BUTTONS_CONTAINER
+import com.khayal.onboarding.presentation.welcome.WELCOME_SCREEN_OUTER_MOST_CONTAINER
+import com.khayal.onboarding.presentation.welcome.WELCOME_TEXTS_CONTAINER
+import com.khayal.onboarding.presentation.welcome.Welcome
 import io.mockk.mockk
 import io.mockk.verify
 import org.junit.Before

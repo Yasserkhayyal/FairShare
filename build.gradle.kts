@@ -7,4 +7,6 @@ plugins {
     alias(libs.plugins.fairshare.android.application) apply false
     alias(libs.plugins.fairshare.android.library) apply false
     alias(libs.plugins.fairshare.android.common) apply false
+    alias(libs.plugins.hilt.android) apply false
+    alias(libs.plugins.google.devetools.ksp) apply false
 }

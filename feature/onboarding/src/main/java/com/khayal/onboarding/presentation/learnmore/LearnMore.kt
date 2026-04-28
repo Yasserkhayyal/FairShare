@@ -1,4 +1,4 @@
-package com.khayal.onboarding.learnmore
+package com.khayal.onboarding.presentation.learnmore
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -18,6 +18,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -32,10 +36,10 @@ import com.khayal.designsystem.ui.buttons.ButtonVariant
 import com.khayal.designsystem.ui.stepindicator.StepIndicator
 import com.khayal.onboarding.R
 
-const val LEARN_MORE_ILLUSTRATION_ICON_TAG = "learnMoreIllustration"
-const val SKIP_BUTTON_TAG = "skipButton"
 const val NEXT_BUTTON_TAG = "nextButton"
 const val ILLUSTRATION_CONTAINER_TAG = "illustrationContainer"
+const val LEARN_MORE_ILLUSTRATION_ICON_TAG = "learnMoreIllustration"
+const val SKIP_BUTTON_TAG = "skipButton"
 
 @Composable
 fun LearnMore(
@@ -99,7 +103,8 @@ fun LearnMore(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
         ) {
-            StepIndicator(currentStep = 0, stepCount = 3)
+            var currentStep by remember { mutableIntStateOf(0) }
+            StepIndicator(currentStep = currentStep, stepCount = 3)
             Row(
                 modifier = Modifier.fillMaxSize(),
                 verticalAlignment = Alignment.Bottom,
@@ -123,7 +128,13 @@ fun LearnMore(
                     modifier = Modifier.testTag(NEXT_BUTTON_TAG),
                     buttonRole = ButtonRole.PRIMARY,
                     buttonVariant = ButtonVariant.FILLED,
-                    onClick = onNextButtonClicked,
+                    onClick = {
+                        if (currentStep < 2) {
+                            currentStep++
+                        } else {
+                            onNextButtonClicked()
+                        }
+                    },
                     buttonContent = {
                         Text(
                             text = stringResource(R.string.next),

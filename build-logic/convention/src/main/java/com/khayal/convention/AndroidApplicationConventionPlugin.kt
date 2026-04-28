@@ -10,7 +10,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply("com.android.application")
-            apply<AndroidCommonConventionPlugin>()
+            apply<CommonConventionPlugin>()
             extensions.configure<ApplicationExtension> {
                 defaultConfig {
                     applicationId = "com.khayal.fairshare"
